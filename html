@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SlideStore - Template PPT</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            Slide<span>Store</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#produk">Produk</a>
+            <a href="#tentang">Tentang</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
+
+        <button class="cart-button" onclick="bukaKeranjang()">
+            🛒 Keranjang
+            <span id="jumlahKeranjang">0</span>
+        </button>
+    </header>
+
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="badge">✨ TEMPLATE PPT PROFESIONAL</p>
+
+            <h1>
+                Buat Presentasi
+                <span>Lebih Menarik</span>
+            </h1>
+
+            <p>
+                Temukan template PowerPoint siap pakai
+                untuk tugas kuliah, bisnis, sekolah,
+                seminar, dan kebutuhan profesional.
+            </p>
+
+            <a href="#produk" class="button">
+                Lihat Template
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUK -->
+    <section id="produk" class="produk-section">
+
+        <div class="section-title">
+            <p class="badge">KOLEKSI TEMPLATE</p>
+
+            <h2>Template PPT Pilihan</h2>
+
+            <p>
+                Pilih template yang sesuai dengan kebutuhanmu.
+            </p>
+        </div>
+
+
+        <!-- SEARCH -->
+        <div class="tools">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔎 Cari template..."
+                onkeyup="cariProduk()"
+            >
+
+            <select id="kategori" onchange="filterKategori()">
+
+                <option value="semua">
+                    Semua Kategori
+                </option>
+
+                <option value="pendidikan">
+                    Pendidikan
+                </option>
+
+                <option value="bisnis">
+                    Bisnis
+                </option>
+
+                <option value="portfolio">
+                    Portfolio
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- DAFTAR PRODUK -->
+        <div class="produk-container" id="produkContainer">
+
+
+            <!-- PRODUK 1 -->
+            <div
+                class="produk"
+                data-kategori="pendidikan"
+                data-nama="PPT Skripsi Minimalis"
+            >
+
+                <div class="produk-image">
+                    <div class="preview">
+                        PRESENTASI<br>
+                        SKRIPSI
+                    </div>
+
+                    <span class="label">
+                        BEST SELLER
+                    </span>
+                </div>
+
+                <div class="produk-info">
+
+                    <p class="kategori">
+                        Pendidikan
+                    </p>
+
+                    <h3>
+                        PPT Skripsi Minimalis
+                    </h3>
+
+                    <p>
+                        Template modern untuk presentasi
+                        skripsi dan tugas akhir.
+                    </p>
+
+                    <div class="produk-bottom">
+
+                        <strong>
+                            Rp15.000
+                        </strong>
+
+                        <button onclick="tambahKeranjang(
+                            'PPT Skripsi Minimalis',
+                            15000
+                        )">
+                            Beli
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUK 2 -->
+            <div
+                class="produk"
+                data-kategori="bisnis"
+                data-nama="PPT Business Modern"
+            >
+
+                <div class="produk-image">
+                    <div class="preview business">
+                        BUSINESS<br>
+                        PRESENTATION
+                    </div>
+                </div>
+
+                <div class="produk-info">
+
+                    <p class="kategori">
+                        Bisnis
+                    </p>
+
+                    <h3>
+                        PPT Business Modern
+                    </h3>
+
+                    <p>
+                        Cocok untuk proposal bisnis,
+                        pitching, dan presentasi perusahaan.
+                    </p>
+
+                    <div class="produk-bottom">
+
+                        <strong>
+                            Rp20.000
+                        </strong>
+
+                        <button onclick="tambahKeranjang(
+                            'PPT Business Modern',
+                            20000
+                        )">
+                            Beli
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUK 3 -->
+            <div
+                class="produk"
+                data-kategori="pendidikan"
+                data-nama="PPT Seminar Proposal"
+            >
+
+                <div class="produk-image">
+                    <div class="preview proposal">
+                        SEMINAR<br>
+                        PROPOSAL
+                    </div>
+                </div>
+
+                <div class="produk-info">
+
+                    <p class="kategori">
+                        Pendidikan
+                    </p>
+
+                    <h3>
+                        PPT Seminar Proposal
+                    </h3>
+
+                    <p>
+                        Template sederhana dan profesional
+                        untuk seminar proposal.
+                    </p>
+
+                    <div class="produk-bottom">
+
+                        <strong>
+                            Rp12.000
+                        </strong>
+
+                        <button onclick="tambahKeranjang(
+                            'PPT Seminar Proposal',
+                            12000
+                        )">
+                            Beli
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUK 4 -->
+            <div
+                class="produk"
+                data-kategori="portfolio"
+                data-nama="PPT Portfolio Profesional"
+            >
+
+                <div class="produk-image">
+                    <div class="preview portfolio">
+                        MY<br>
+                        PORTFOLIO
+                    </div>
+                </div>
+
+                <div class="produk-info">
+
+                    <p class="kategori">
+                        Portfolio
+                    </p>
+
+                    <h3>
+                        PPT Portfolio Profesional
+                    </h3>
+
+                    <p>
+                        Tampilkan pengalaman, skill,
+                        dan proyek dengan desain profesional.
+                    </p>
+
+                    <div class="produk-bottom">
+
+                        <strong>
+                            Rp18.000
+                        </strong>
+
+                        <button onclick="tambahKeranjang(
+                            'PPT Portfolio Profesional',
+                            18000
+                        )">
+                            Beli
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- KEUNGGULAN -->
+    <section class="features">
+
+        <div>
+            <span>⚡</span>
+            <h3>Siap Pakai</h3>
+            <p>
+                Template dapat langsung diedit.
+            </p>
+        </div>
+
+        <div>
+            <span>🎨</span>
+            <h3>Desain Modern</h3>
+            <p>
+                Tampilan profesional dan menarik.
+            </p>
+        </div>
+
+        <div>
+            <span>💻</span>
+            <h3>Mudah Diedit</h3>
+            <p>
+                Edit teks, warna, dan gambar dengan mudah.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- TENTANG -->
+    <section id="tentang" class="tentang">
+
+        <div>
+
+            <p class="badge">
+                TENTANG SLIDESTORE
+            </p>
+
+            <h2>
+                Template sederhana,
+                presentasi luar biasa.
+            </h2>
+
+            <p>
+                SlideStore menyediakan template PowerPoint
+                untuk membantu siswa, mahasiswa, freelancer,
+                guru, dan pelaku bisnis membuat presentasi
+                dengan lebih cepat.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- KONTAK -->
+    <section id="kontak" class="kontak">
+
+        <h2>
+            Butuh bantuan?
+        </h2>
+
+        <p>
+            Hubungi kami jika memiliki pertanyaan
+            mengenai produk.
+        </p>
+
+        <a
+            href="https://wa.me/6281234567890"
+            class="button"
+            target="_blank"
+        >
+            💬 WhatsApp
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="logo">
+            Slide<span>Store</span>
+        </div>
+
+        <p>
+            © 2026 SlideStore. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- MODAL KERANJANG -->
+    <div
+        id="cartModal"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <button
+                class="close"
+                onclick="tutupKeranjang()"
+            >
+                ×
+            </button>
+
+            <h2>
+                🛒 Keranjang
+            </h2>
+
+            <div id="isiKeranjang">
+                <p>
+                    Keranjang masih kosong.
+                </p>
+            </div>
+
+            <div class="total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="totalHarga">
+                    Rp0
+                </strong>
+
+            </div>
+
+            <button
+                class="checkout"
+                onclick="checkout()"
+            >
+                Lanjut Pembayaran
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
